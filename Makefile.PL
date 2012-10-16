@@ -1,0 +1,13 @@
+use ExtUtils::MakeMaker;
+
+WriteMakefile(
+    NAME            => 'WoW::Armory::API',
+    AUTHOR          => 'Aleksandr Aleshin <silencer@cpan.org>',
+    VERSION_FROM    => 'lib/WoW/Armory/API.pm',
+    ABSTRACT_FROM   => 'lib/WoW/Armory/API.pm',
+    PREREQ_PM       => {
+        'URI::Escape'       => 0,
+        'LWP::UserAgent'    => 0,
+        'JSON::XS'          => 0,
+    },
+);

@@ -1,0 +1,8 @@
+Makefile.PL
+MANIFEST
+README
+Changes
+lib/WoW/Armory/API.pm
+t/all.t
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
