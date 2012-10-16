@@ -21,4 +21,4 @@ requires:
   JSON::XS: 0
   LWP::UserAgent: 0
   URI::Escape: 0
-version: 1
+version: 1.00

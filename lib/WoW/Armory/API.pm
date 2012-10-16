@@ -3,7 +3,14 @@ package WoW::Armory::API;
 use strict;
 use warnings;
 
-our $VERSION = 1.00;
+our $VERSION = '1.00';
+
+use base 'Exporter';
+
+our @EXPORT = qw(
+    WOW_CHARACTER_FIELDS WOW_GUILD_FIELDS
+    WOW_ARENA_TEAM_2 WOW_ARENA_TEAM_3 WOW_ARENA_TEAM_5
+);
 
 use URI::Escape;
 use LWP::UserAgent;
@@ -54,6 +61,10 @@ use constant WOW_CHARACTER_FIELDS => [qw(achievements appearance feed guild hunt
     professions progression pvp quests reputation stats talents titles)];
 
 use constant WOW_GUILD_FIELDS => [qw(members achievements news challenge)];
+
+use constant WOW_ARENA_TEAM_2 => '2v2';
+use constant WOW_ARENA_TEAM_3 => '3v3';
+use constant WOW_ARENA_TEAM_5 => '5v5';
 
 sub _init_package {
     my $class = shift;
@@ -168,13 +179,25 @@ WoW::Armory::API - Perl interface to WoW API
 
 =head3 WOW_CHARACTER_FIELDS
 
-    @fields = @{WoW::Armory::API::WOW_CHARACTER_FIELDS()};
+    @fields = @{WOW_CHARACTER_FIELDS()};
     $data = $api->GetCharacter($realmId, $characterName, join(',', @fields));
 
 =head3 WOW_GUILD_FIELDS
 
-    @fields = @{WoW::Armory::API::WOW_GUILD_FIELDS()};
+    @fields = @{WOW_GUILD_FIELDS()};
     $data = $api->GetGuild($realmId, $guildName, join(',', @fields));
+
+=head  WOW_ARENA_TEAM_2
+
+    $data = $api->GetArena($realmId, WOW_ARENA_TEAM_2, $teamName);
+
+=head3 WOW_ARENA_TEAM_3
+
+    $data = $api->GetArena($realmId, WOW_ARENA_TEAM_3, $teamName);
+
+=head3 WOW_ARENA_TEAM_5
+
+    $data = $api->GetArena($realmId, WOW_ARENA_TEAM_5, $teamName);
 
 =head2 Constructor
 
