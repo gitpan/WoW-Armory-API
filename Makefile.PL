@@ -3,6 +3,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME            => 'WoW::Armory::API',
     AUTHOR          => 'Aleksandr Aleshin <silencer@cpan.org>',
+    LICENSE         => 'perl_5',
     VERSION_FROM    => 'lib/WoW/Armory/API.pm',
     ABSTRACT_FROM   => 'lib/WoW/Armory/API.pm',
     PREREQ_PM       => {

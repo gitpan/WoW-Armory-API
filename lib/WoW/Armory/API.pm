@@ -3,7 +3,7 @@ package WoW::Armory::API;
 use strict;
 use warnings;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 use base 'Exporter';
 
@@ -187,7 +187,7 @@ WoW::Armory::API - Perl interface to WoW API
     @fields = @{WOW_GUILD_FIELDS()};
     $data = $api->GetGuild($realmId, $guildName, join(',', @fields));
 
-=head  WOW_ARENA_TEAM_2
+=head3  WOW_ARENA_TEAM_2
 
     $data = $api->GetArena($realmId, WOW_ARENA_TEAM_2, $teamName);
 
