@@ -10,5 +10,6 @@ WriteMakefile(
         'URI::Escape'       => 0,
         'LWP::UserAgent'    => 0,
         'JSON::XS'          => 0,
+        'Class::Accessor'   => 0,
     },
 );

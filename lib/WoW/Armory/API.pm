@@ -3,7 +3,7 @@ package WoW::Armory::API;
 use strict;
 use warnings;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 use base 'Exporter';
 
@@ -170,8 +170,20 @@ WoW::Armory::API - Perl interface to WoW API
 
     $api = WoW::Armory::API->new(Region => 'eu', Locale => 'ru_RU');
 
-    $char = $api->GetCharacter('realm', 'Character');
-    $guild = $api->GetGuild('realm', 'Guild');
+    $char_data = $api->GetCharacter('realm', 'Character', 'items,pets,mounts');
+    $guild_data = $api->GetGuild('realm', 'Guild');
+
+    print $char_data->{items}{head}{name};
+    print $guild_data->{name};
+
+    use WoW::Armory::Class::Character;
+    use WoW::Armory::Class::Guild;
+
+    $char = WoW::Armory::Class::Character->new($char_data);
+    $guild = WoW::Armory::Class::Guild->new($guild_data);
+
+    print $char->items->head->name;
+    print $guild->name;
 
 =head1 METHODS
 
