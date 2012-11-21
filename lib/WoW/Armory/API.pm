@@ -3,7 +3,7 @@ package WoW::Armory::API;
 use strict;
 use warnings;
 
-our $VERSION = '1.03';
+our $VERSION = '1.031';
 
 use base 'Exporter';
 
@@ -216,7 +216,7 @@ WoW::Armory::API - Perl interface to WoW API
 =head3 new()
 
     $api = WoW::Armory::API->new;
-    $api = WoW::Armory::API->new(Region => $regionId, locale => $locale);
+    $api = WoW::Armory::API->new(Region => $regionId, Locale => $locale);
 
 =head2 General
 
@@ -371,6 +371,11 @@ See L<http://blizzard.github.com/api-wow-docs/> for more details.
 =head1 SEE ALSO
 
 L<http://blizzard.github.com/api-wow-docs/>
+
+=head1 REPOSITORY
+
+The source code for the WoW::Armory::API is held in a public git repository
+on Github: L<https://github.com/Silencer2K/perl-wow-api>
 
 =head1 AUTHOR
 
